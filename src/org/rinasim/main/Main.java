@@ -19,7 +19,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		//设定LookAndFeel  沈毅到此一游
+		//设定LookAndFeel
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException e) {
@@ -31,7 +31,7 @@ public class Main {
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		
+		System.out.println("t");
 	}
 
 }
