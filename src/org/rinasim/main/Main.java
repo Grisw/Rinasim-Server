@@ -31,7 +31,7 @@ public class Main {
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		System.out.println("t");
+		System.out.println("tvgf");
 	}
 
 }
