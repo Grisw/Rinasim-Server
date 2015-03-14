@@ -1,5 +1,7 @@
 package org.rinasim.main;
 
+import java.awt.Font;
+
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -22,6 +24,9 @@ public class Main {
 		//…Ë∂®LookAndFeel
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			UIManager.put("Label.font",new Font("Œ¢»Ì—≈∫⁄", java.awt.Font.PLAIN, 12));
+			UIManager.put("Button.font",new Font("Œ¢»Ì—≈∫⁄", java.awt.Font.PLAIN, 12));
+			UIManager.put("TextField.font",new Font("Œ¢»Ì—≈∫⁄", java.awt.Font.PLAIN, 12));
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (InstantiationException e) {
