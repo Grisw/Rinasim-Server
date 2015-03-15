@@ -1,4 +1,4 @@
-package org.rinasim.Frame;
+package org.rinasim.frame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -8,7 +8,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Window.Type;
 
 /**
  * 创建服务器登陆界面
@@ -25,19 +24,23 @@ public class Login extends JFrame {
 	private JLabel lbl;
 
 	public Login() {
+		
 		//设立窗体框架
 		this.setResizable(false);
-		this.setTitle("RinasimServer");
+		this.setTitle("Rinasim Server");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 428, 242);
+		
 		//面板
 		pnl = new JPanel();
 		pnl.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.setContentPane(pnl);
 		pnl.setLayout(null);
+		
 		//密码标签
 		lbl = new JLabel("\u5BC6\u7801\uFF1A");
 		lbl.setBounds(64, 68, 45, 18);
+		
 		//密码输入框
 		passwordField = new JPasswordField();
 		passwordField.setBounds(123, 65, 196, 24);
@@ -46,6 +49,7 @@ public class Login extends JFrame {
 				//密码框...
 			}
 		});
+		
 		//登陆按钮
 		btn = new JButton("\u767B\u9646");
 		btn.setBounds(154, 147, 113, 27);

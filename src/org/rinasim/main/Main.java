@@ -5,7 +5,8 @@ import java.awt.Font;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import org.rinasim.Frame.Login;
+import org.rinasim.frame.Login;
+
 
 /**
  * 启动程序的入口
@@ -40,7 +41,8 @@ public class Main {
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-
+		
+		//启动登陆窗体
 		new Login().setVisible(true);
 		
 	}

@@ -8,9 +8,9 @@ import javax.swing.JOptionPane;
 
 /**
  * 连接数据库
- * @author MissingNo.
- * @date 2014年12月15日 下午9:06:49
- * @version v3.0
+ * @author 刘旭涛
+ * @date 2015年3月15日 上午10:14:38
+ * @since v1.0
  */
 public class DataBase {	
 	
