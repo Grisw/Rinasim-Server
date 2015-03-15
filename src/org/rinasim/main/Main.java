@@ -41,7 +41,7 @@ public class Main {
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		
+
 		//Æô¶¯µÇÂ½´°Ìå
 		new Login().setVisible(true);
 		
