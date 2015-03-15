@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 /**
  * 聊天信息
- * @author MissingNo.
- * @date 2015年2月11日 下午8:06:23
- * @version v3.0
+ * @author 刘旭涛
+ * @date 2015年3月15日 下午9:11:36
+ * @since v1.0
  */
 public class Message implements Serializable{
 

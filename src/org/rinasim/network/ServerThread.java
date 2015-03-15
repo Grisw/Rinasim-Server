@@ -25,9 +25,9 @@ import org.rinasim.util.Time;
 
 /**
  * 服务器监听线程
- * @author MissingNo.
- * @date 2014年12月17日 下午6:45:15
- * @version v3.0
+ * @author 刘旭涛
+ * @date 2015年3月15日 下午9:11:09
+ * @since v1.0
  */
 public class ServerThread extends Thread{
 
