@@ -1,7 +1,11 @@
 package org.rinasim.main;
 
+import java.awt.Font;
+
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
+import org.rinasim.Frame.Login;
 
 /**
  * 启动程序的入口
@@ -11,6 +15,8 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class Main {
 
+	private static final int TEXT_SIZE=14;
+	
 	/**
 	 * 主处理
 	 * @author 刘旭涛
@@ -22,6 +28,9 @@ public class Main {
 		//设定LookAndFeel
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			UIManager.put("Label.font",new Font("微软雅黑", java.awt.Font.PLAIN, TEXT_SIZE));
+			UIManager.put("Button.font",new Font("微软雅黑", java.awt.Font.PLAIN, TEXT_SIZE));
+			UIManager.put("TextField.font",new Font("微软雅黑", java.awt.Font.PLAIN, TEXT_SIZE));
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (InstantiationException e) {
@@ -31,7 +40,9 @@ public class Main {
 		} catch (UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		System.out.println("tvgf");
+
+		new Login().setVisible(true);
+		
 	}
 
 }
