@@ -4,12 +4,14 @@ import javax.swing.JDialog;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 
+import org.rinasim.main.Main;
 import org.rinasim.util.FileOperator;
 
 /**
@@ -78,13 +80,12 @@ public class EditPassword extends JDialog {
 					if(String.valueOf(newp.getPassword()).equals(String.valueOf(repeat.getPassword()))){
 						char[] p=oldp.getPassword();
 						for(int i=0;i<p.length;i++){
-							p[i]=(char) (p[i]^'%');
+							p[i]=(char) (p[i]^Main.PASSWORD_OPERATOR);
 						}
-						String password=String.valueOf(p);
-						if(FileOperator.getPassword()!=null&&FileOperator.getPassword().equals(password)){
+						if(FileOperator.getPassword()!=null&&Arrays.equals(p, FileOperator.getPassword())){
 							p=newp.getPassword();
 							for(int i=0;i<p.length;i++){
-								p[i]=(char) (p[i]^'%');
+								p[i]=(char) (p[i]^Main.PASSWORD_OPERATOR);
 							}
 							FileOperator.writePassword(p);
 							JOptionPane.showMessageDialog(EditPassword.this, "修改成功！", "信息", JOptionPane.INFORMATION_MESSAGE);

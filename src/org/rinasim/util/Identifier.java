@@ -60,48 +60,48 @@ public final class Identifier {
 	 * 添加联系人信息
 	 * 格式：ADD_FRIEND->int frdId
 	 */
-	public static final int ADD_FRIEND=10;
+	public static final int ADD_FRIEND=9;
 	
 	/**
 	 * 删除联系人信息
 	 * 格式：DELETE_FRIEND->int frdId
 	 */
-	public static final int DELETE_FRIEND=11;
+	public static final int DELETE_FRIEND=10;
 	
 	/**
 	 * 推送更新
 	 * 格式：PUSH_UPDATE->int length->String time->String version
 	 */
-	public static final int PUSH_UPDATE=12;
+	public static final int PUSH_UPDATE=11;
 	
 	/**
 	 * 请求更新
 	 * 格式：UPDATE->int length->String name->byte[] data
 	 */
-	public static final int UPDATE=13;
+	public static final int UPDATE=12;
 
 	/**
 	 * 离线消息
 	 * 格式：OFFLINE_MESSAGE->int frdId
 	 */
-	public static final int OFFLINE_MESSAGE=15;
+	public static final int OFFLINE_MESSAGE=13;
 	
 	/**
 	 * 联系人状态
 	 * 格式：GET_FRIEND_STATUS
 	 */
-	public static final int GET_FRIEND_STATUS=16;
+	public static final int GET_FRIEND_STATUS=14;
 	
 	/**
 	 * 设置联系人备注
 	 * 格式：SET_FRIEND_NOTE->int frdId->String note
 	 */
-	public static final int SET_FRIEND_NOTE=17;
+	public static final int SET_FRIEND_NOTE=15;
 	
 	/**
 	 * 已读消息
 	 * 格式：READ_MESSAGE->int frdId
 	 */
-	public static final int READ_MESSAGE=18;
+	public static final int READ_MESSAGE=16;
 
 }

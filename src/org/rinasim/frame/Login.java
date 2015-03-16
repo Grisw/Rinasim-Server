@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+
+import org.rinasim.main.Main;
 import org.rinasim.util.FileOperator;
 
 import java.awt.event.ActionListener;
@@ -65,7 +67,7 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				char[] p=password.getPassword();
 				for(int i=0;i<p.length;i++){
-					p[i]=(char) (p[i]^'%');
+					p[i]=(char) (p[i]^Main.PASSWORD_OPERATOR);
 				}
 				if(FileOperator.getPassword()!=null&&Arrays.equals(FileOperator.getPassword(), p)){
 					ServerUI frame=new ServerUI();

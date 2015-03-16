@@ -1,6 +1,8 @@
 package org.rinasim.main;
 
+import java.awt.EventQueue;
 import java.awt.Font;
+import java.util.Enumeration;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -16,7 +18,12 @@ import org.rinasim.frame.Login;
  */
 public class Main {
 
-	private static final int TEXT_SIZE=14;
+	private static final Font FONT=new Font("微软雅黑", java.awt.Font.PLAIN, 14);
+	
+	/**
+	 * 密码运算符
+	 */
+	public static final char PASSWORD_OPERATOR='%';
 	
 	/**
 	 * 主处理
@@ -26,12 +33,16 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		//设定LookAndFeel
+		//设定界面风格
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			UIManager.put("Label.font",new Font("微软雅黑", java.awt.Font.PLAIN, TEXT_SIZE));
-			UIManager.put("Button.font",new Font("微软雅黑", java.awt.Font.PLAIN, TEXT_SIZE));
-			UIManager.put("TextField.font",new Font("微软雅黑", java.awt.Font.PLAIN, TEXT_SIZE));
+			Enumeration<Object> elements=UIManager.getDefaults().keys();
+			while(elements.hasMoreElements()){
+				Object key = elements.nextElement();
+				if(UIManager.get(key) instanceof Font){
+					UIManager.put(key, FONT);
+				}
+			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (InstantiationException e) {
@@ -43,7 +54,13 @@ public class Main {
 		}
 
 		//启动登陆窗体
-		new Login().setVisible(true);
+		EventQueue.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				new Login().setVisible(true);
+			}
+		});
 		
 	}
 
