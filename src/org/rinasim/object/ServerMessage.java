@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  * 服务器处理的信息
- * @author 刘旭涛
  * @date 2015年3月15日 下午8:36:05
  * @since v1.0
  */

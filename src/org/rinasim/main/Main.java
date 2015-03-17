@@ -13,7 +13,6 @@ import org.rinasim.frame.Login;
 /**
  * 启动程序的入口
  * @since v1.0
- * @author 刘旭涛
  * @date 2015年3月14日 下午1:39:56
  */
 public class Main {
@@ -27,7 +26,6 @@ public class Main {
 	
 	/**
 	 * 主处理
-	 * @author 刘旭涛
 	 * @date 2015年3月14日 下午1:42:41
 	 * @since v1.0
 	 */

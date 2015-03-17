@@ -5,7 +5,6 @@ import java.util.Date;
 
 /**
  * 用户对象
- * @author 刘旭涛
  * @date 2015年3月15日 下午8:36:31
  * @since v1.0
  */

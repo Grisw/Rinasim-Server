@@ -33,7 +33,6 @@ import javax.swing.JMenuItem;
 
 /**
  * 联系人面板
- * @author 刘旭涛
  * @date 2015年3月15日 下午9:11:17
  * @since v1.0
  */

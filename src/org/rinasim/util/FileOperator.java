@@ -13,9 +13,8 @@ import org.rinasim.object.ServerMessage;
 
 /**
  * 文件操作
- * @author MissingNo.
- * @date 2015年2月14日 下午1:51:13
- * @version v3.0
+ * @date 2015年3月17日 上午10:16:04
+ * @since v1.0
  */
 public class FileOperator {
 

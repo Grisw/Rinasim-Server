@@ -46,7 +46,6 @@ import org.rinasim.util.Time;
 
 /**
  * 服务器主窗体
- * @author 刘旭涛
  * @date 2015年3月15日 下午7:41:45
  * @since v1.0
  */

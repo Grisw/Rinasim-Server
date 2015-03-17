@@ -25,7 +25,6 @@ import org.rinasim.object.User;
 
 /**
  * 联系人数据连接
- * @author 刘旭涛
  * @date 2015年3月15日 下午8:42:43
  * @since v1.0
  */

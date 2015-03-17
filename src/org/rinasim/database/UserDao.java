@@ -20,7 +20,6 @@ import org.rinasim.object.User;
 
 /**
  * 用户数据连接
- * @author 刘旭涛
  * @date 2015年3月15日 下午8:42:55
  * @since v1.0
  */
