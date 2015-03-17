@@ -240,7 +240,7 @@ public class ServerUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser=new JFileChooser(".");
-				chooser.setFileFilter(new FileNameExtensionFilter("Jar文件", ".jar"));
+				chooser.setFileFilter(new FileNameExtensionFilter("Jar文件", "jar"));
 				chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				chooser.setMultiSelectionEnabled(false);
 				int returns=chooser.showOpenDialog(ServerUI.this);

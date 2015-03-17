@@ -6,7 +6,7 @@ package org.rinasim.util;
  * @date 2015年3月15日 下午8:33:14
  * @since v1.0
  */
-public final class Identifier {
+public class Identifier {
 
 	/**
 	 * 服务器发送的信息

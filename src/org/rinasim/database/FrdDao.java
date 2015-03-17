@@ -1,6 +1,5 @@
 package org.rinasim.database;
 
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,7 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -65,48 +63,7 @@ public class FrdDao {
 		}
 		return list;
 	}
-	
-	/**
-	 * 获取联系人表(Android)		
-	 * @param id 用户ID
-	 * @return 联系人表
-	 */
-	public static List<Map<String, Object>> getFrdList(int id){
-		List<Map<String, Object>> list =new ArrayList<Map<String,Object>>();
-		String sql="select * from [dbo].["+id+"]";
-		try {
-			Statement statement = conn.createStatement();
-			ResultSet res=statement.executeQuery(sql);
-			while(res.next()){
-				Map<String, Object> map=new HashMap<String, Object>();
-				map.put("status",UserDao.getUser(res.getInt("id")).isOnline()+"");
-				ByteArrayInputStream bais=new ByteArrayInputStream(UserDao.getUser(res.getInt("id")).getPortrait());
-				try {
-					ImageIcon img = (ImageIcon) new ObjectInputStream(bais).readObject();
-					BufferedImage bi = new BufferedImage(img.getImage().getWidth(null), img.getImage().getHeight(null), BufferedImage.TYPE_INT_RGB);
-					bi.createGraphics().drawImage(img.getImage(), 0, 0, null);
-					ByteArrayOutputStream baos=new ByteArrayOutputStream();
-					ImageIO.write(bi, "png", baos);
-					map.put("portrait", baos.toByteArray());
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-					JOptionPane.showMessageDialog(null, "发生错误！\n"+e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
-				} catch (IOException e) {
-					e.printStackTrace();
-					JOptionPane.showMessageDialog(null, "发生错误！\n"+e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
-				}
-				map.put("name", res.getString("note"));
-				map.put("id", res.getInt("id")+"");
-				map.put("hasmsg", res.getBoolean("hasmsg"));
-				list.add(map);
-			}
-		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, "发生错误！\n"+e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
-			e.printStackTrace();
-		}
-		return list;
-	}
-	
+
 	/**
 	 * 添加联系人表		
 	 * @param id 用户ID

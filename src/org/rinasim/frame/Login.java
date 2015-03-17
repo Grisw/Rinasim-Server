@@ -17,9 +17,9 @@ import java.util.Arrays;
 
 /**
  * 登录服务器
- * @author MissingNo.
- * @date 2015年2月18日 下午7:42:21
- * @version v3.0
+ * @author 刘旭涛
+ * @date 2015年3月16日 下午7:40:27
+ * @since v1.0
  */
 public class Login extends JFrame {
 

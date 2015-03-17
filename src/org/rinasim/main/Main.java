@@ -18,7 +18,7 @@ import org.rinasim.frame.Login;
  */
 public class Main {
 
-	private static final Font FONT=new Font("Î¢ÈíÑÅºÚ", java.awt.Font.PLAIN, 14);
+	private static final Font FONT=new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 14);
 	
 	/**
 	 * ÃÜÂëÔËËã·û

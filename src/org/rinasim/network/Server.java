@@ -50,6 +50,7 @@ public class Server extends Thread{
 	/**
 	 * 等待连接
 	 */
+	@Override
 	public void run(){
 		while(true){
 			ServerUI.serverInfo.append("("+Time.getDateTime()+")正在等待连接...\n");
