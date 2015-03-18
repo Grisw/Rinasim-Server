@@ -65,9 +65,7 @@ public class UserDao {
 				user.setStatus(result.getBoolean("status"));
 				try {
 					ImageIcon img=(ImageIcon) new ObjectInputStream(result.getBinaryStream("portrait")).readObject();
-					ByteArrayOutputStream baos=new ByteArrayOutputStream();
-					new ObjectOutputStream(baos).writeObject(img);
-					user.setPortrait(baos.toByteArray());
+					user.setPortrait(img);
 				} catch (IOException e) {
 					e.printStackTrace();
 					JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¡\n"+e.getMessage(), "´íÎó", JOptionPane.ERROR_MESSAGE);
@@ -200,7 +198,14 @@ public class UserDao {
 			String sql="insert users VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement=conn.prepareStatement(sql);
 			statement.setInt(1, Integer.parseInt(user.getId()));
-			statement.setBinaryStream(2, new ByteArrayInputStream(user.getPortrait()));
+			ByteArrayOutputStream baos=new ByteArrayOutputStream();
+			try {
+				new ObjectOutputStream(baos).writeObject(user.getPortrait());
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¡\n"+e.getMessage(), "´íÎó", JOptionPane.ERROR_MESSAGE);
+				e.printStackTrace();
+			}
+			statement.setBinaryStream(2, new ByteArrayInputStream(baos.toByteArray()));
 			statement.setString(3, user.getName());
 			statement.setString(4, user.getPassword());
 			statement.setString(5, user.getSex());
@@ -241,7 +246,14 @@ public class UserDao {
 		try{
 			String sql="update users set portrait=?,name=?,sex=?,birthday=?,email=?,constellation=?,occupation=?,age=?,company=?,school=?,address=?,introduction=? where id=?";
 			PreparedStatement statement=conn.prepareStatement(sql);
-			statement.setBinaryStream(1, new ByteArrayInputStream(user.getPortrait()));
+			ByteArrayOutputStream baos=new ByteArrayOutputStream();
+			try {
+				new ObjectOutputStream(baos).writeObject(user.getPortrait());
+			} catch (IOException e) {
+				JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¡\n"+e.getMessage(), "´íÎó", JOptionPane.ERROR_MESSAGE);
+				e.printStackTrace();
+			}
+			statement.setBinaryStream(1, new ByteArrayInputStream(baos.toByteArray()));
 			statement.setString(2, user.getName());
 			statement.setString(3, user.getSex());
 			if(user.getBirthday()==null){

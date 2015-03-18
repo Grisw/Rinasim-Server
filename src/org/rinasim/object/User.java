@@ -3,6 +3,8 @@ package org.rinasim.object;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.swing.ImageIcon;
+
 /**
  * 用户对象
  * @date 2015年3月15日 下午8:36:31
@@ -13,7 +15,7 @@ public class User implements Serializable{
 	private static final long serialVersionUID = -7474127554963548186L;
 	
 	private String id;
-	private byte[] portrait;
+	private ImageIcon portrait;
 	private String name;
 	private String password;
 	private String sex;
@@ -47,17 +49,17 @@ public class User implements Serializable{
 	
 	/**
 	 * 获取头像
-	 * @return 头像字节数据
+	 * @return 头像
 	 */
-	public byte[] getPortrait() {
+	public ImageIcon getPortrait() {
 		return portrait;
 	}
 
 	/**
 	 * 设置头像
-	 * @param portrait 要设置的头像Image字节数据
+	 * @param portrait 要设置的头像Image
 	 */
-	public void setPortrait(byte[] portrait) {
+	public void setPortrait(ImageIcon portrait) {
 		this.portrait = portrait;
 	}
 

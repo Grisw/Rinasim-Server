@@ -44,21 +44,12 @@ public class FrdDao {
 			Statement statement = conn.createStatement();
 			ResultSet res=statement.executeQuery(sql);
 			while(res.next()){
-				ByteArrayInputStream bais=new ByteArrayInputStream(UserDao.getUser(res.getInt("id")).getPortrait());
-				try {
-					ImageIcon img = (ImageIcon) new ObjectInputStream(bais).readObject();
-					list.add(new FriendPanel(img, res.getString("note"), res.getInt("id"), UserDao.getUser(res.getInt("id")).isOnline(), res.getBoolean("hasmsg")));
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-					JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¡\n"+e.getMessage(), "´íÎó", JOptionPane.ERROR_MESSAGE);
-				}
+				ImageIcon img = UserDao.getUser(res.getInt("id")).getPortrait();
+				list.add(new FriendPanel(img, res.getString("note"), res.getInt("id"), UserDao.getUser(res.getInt("id")).isOnline(), res.getBoolean("hasmsg")));
 			}
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¡\n"+e.getMessage(), "´íÎó", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "·¢Éú´íÎó£¡\n"+e.getMessage(), "´íÎó", JOptionPane.ERROR_MESSAGE);
 		}
 		return list;
 	}
