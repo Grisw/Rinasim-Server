@@ -2,10 +2,11 @@ package org.rinasim.util;
 
 /**
  * 信息标识符
+ * @author 刘旭涛
  * @date 2015年3月15日 下午8:33:14
  * @since v1.0
  */
-public class Identifier {
+public interface Identifier {
 
 	/**
 	 * 服务器发送的信息

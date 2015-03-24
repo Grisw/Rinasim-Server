@@ -20,6 +20,7 @@ import org.rinasim.object.User;
 
 /**
  * 用户数据连接
+ * @author 刘旭涛
  * @date 2015年3月15日 下午8:42:55
  * @since v1.0
  */
@@ -190,14 +191,14 @@ public class UserDao {
 		try{
 			String sqlcheck="select * from users where id = ?";
 			PreparedStatement statementck=conn.prepareStatement(sqlcheck);
-			statementck.setInt(1, Integer.parseInt(user.getId()));
+			statementck.setInt(1, user.getId());
 			ResultSet resck=statementck.executeQuery();
 			if(resck.next()){
 				return false;
 			}
 			String sql="insert users VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement=conn.prepareStatement(sql);
-			statement.setInt(1, Integer.parseInt(user.getId()));
+			statement.setInt(1, user.getId());
 			ByteArrayOutputStream baos=new ByteArrayOutputStream();
 			try {
 				new ObjectOutputStream(baos).writeObject(user.getPortrait());
@@ -215,11 +216,7 @@ public class UserDao {
 				statement.setDate(6, new Date(user.getBirthday().getTime()));
 			}
 			statement.setString(7, user.getEmail());
-			if(user.getAge()==null){
-				statement.setInt(8, 0);
-			}else{
-				statement.setInt(8, Integer.parseInt(user.getAge()));
-			}
+			statement.setInt(8, user.getAge());
 			statement.setString(9, user.getConstellation());
 			statement.setString(10, user.getOccupation());
 			statement.setString(11, user.getCompany());
@@ -264,16 +261,12 @@ public class UserDao {
 			statement.setString(5, user.getEmail());
 			statement.setString(6, user.getConstellation());
 			statement.setString(7, user.getOccupation());
-			if(user.getAge()==null){
-				statement.setInt(8, 0);
-			}else{
-				statement.setInt(8, Integer.parseInt(user.getAge()));
-			}
+			statement.setInt(8, user.getAge());
 			statement.setString(9, user.getCompany());
 			statement.setString(10, user.getSchool());
 			statement.setString(11, user.getAddress());
 			statement.setString(12, user.getIntroduction());
-			statement.setInt(13, Integer.parseInt(user.getId()));
+			statement.setInt(13, user.getId());
 			if(statement.executeUpdate()==0){
 				return false;
 			}else{

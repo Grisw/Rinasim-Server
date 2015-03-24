@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * 聊天信息
+ * @author 刘旭涛
  * @date 2015年3月15日 下午9:11:36
  * @since v1.0
  */

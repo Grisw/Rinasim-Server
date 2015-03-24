@@ -13,6 +13,7 @@ import org.rinasim.object.ServerMessage;
 
 /**
  * 文件操作
+ * @author 刘旭涛
  * @date 2015年3月17日 上午10:16:04
  * @since v1.0
  */

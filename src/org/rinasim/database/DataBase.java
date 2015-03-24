@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  * 连接数据库
+ * @author 刘旭涛
  * @date 2015年3月15日 上午10:14:38
  * @since v1.0
  */

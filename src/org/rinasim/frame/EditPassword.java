@@ -16,6 +16,7 @@ import org.rinasim.util.FileOperator;
 
 /**
  * 修改密码窗体
+ * @author 刘旭涛
  * @date 2015年3月15日 下午8:26:23
  * @since v1.0
  */

@@ -17,6 +17,7 @@ import java.util.Arrays;
 
 /**
  * 登录服务器
+ * @author 刘旭涛
  * @date 2015年3月16日 下午7:40:27
  * @since v1.0
  */

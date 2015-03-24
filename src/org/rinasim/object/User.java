@@ -7,21 +7,22 @@ import javax.swing.ImageIcon;
 
 /**
  * 用户对象
- * @date 2015年3月15日 下午8:36:31
+ * @author 刘旭涛
+ * @date 2015年3月18日 下午12:56:07
  * @since v1.0
  */
 public class User implements Serializable{
 
 	private static final long serialVersionUID = -7474127554963548186L;
 	
-	private String id;
+	private int id;
 	private ImageIcon portrait;
 	private String name;
 	private String password;
 	private String sex;
 	private Date birthday;
 	private String email;
-	private String age;
+	private int age;
 	private String constellation;
 	private String occupation;
 	private String company;
@@ -35,7 +36,7 @@ public class User implements Serializable{
 	 * 获取ID
 	 * @return 用户ID
 	 */
-	public String getId(){
+	public int getId(){
 		return id;
 	}
 	
@@ -44,7 +45,7 @@ public class User implements Serializable{
 	 * @param id 用户ID,1~4294967296
 	 */
 	public void setId(int id){	
-		this.id=id+"";
+		this.id=id;
 	}
 	
 	/**
@@ -73,7 +74,7 @@ public class User implements Serializable{
 	
 	/**
 	 * 设定用户名
-	 * @param nickname 用户名,不大于15个字符
+	 * @param nickname 用户名,不大于18个字符
 	 * @return true 修改成功，false 修改失败
 	 */
 	public boolean setName(String name){
@@ -95,11 +96,11 @@ public class User implements Serializable{
 	
 	/**
 	 * 设定密码
-	 * @param password 密码,不大于20个字符
+	 * @param password 密码,不大于50个字符
 	 * @return true 修改成功，false 修改失败
 	 */
 	public boolean setPassword(String password){
-		if(password.length()<6||password.length()>20){
+		if(password.length()<6||password.length()>50){
 			return false;
 		}else{
 			this.password=password;
@@ -187,7 +188,7 @@ public class User implements Serializable{
 	 * 获取年龄
 	 * @return 用户年龄
 	 */
-	public String getAge(){
+	public int getAge(){
 		return age;
 	}
 	
@@ -200,7 +201,7 @@ public class User implements Serializable{
 		if(age<1||age>100){
 			return false;
 		}else{
-			this.age=age+"";
+			this.age=age;
 			return true;
 		}
 	}

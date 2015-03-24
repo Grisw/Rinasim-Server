@@ -91,7 +91,7 @@ public class Server extends Thread{
 					User user=(User) reader.readObject();
 					boolean flag=UserDao.addUser(user);
 					if(flag){
-						FrdDao.addTable(Integer.parseInt(user.getId()));
+						FrdDao.addTable(user.getId());
 						ServerUI.serverInfo.append("("+Time.getDateTime()+")"+socket.getInetAddress().getHostAddress()+"ÒÑ×¢²á£¬ID£º"+user.getId()+"\n");
 					}else{
 						ServerUI.serverInfo.append("("+Time.getDateTime()+")"+socket.getInetAddress().getHostAddress()+"×¢²áÊ§°Ü£¬ID£º"+user.getId()+"\n");
