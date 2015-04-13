@@ -16,12 +16,12 @@ import javax.swing.JOptionPane;
 import org.rinasim.database.FrdDao;
 import org.rinasim.database.UserDao;
 import org.rinasim.frame.ServerUI;
-import org.rinasim.object.FriendPanel;
 import org.rinasim.object.Message;
 import org.rinasim.object.User;
 import org.rinasim.util.FileOperator;
 import org.rinasim.util.Identifier;
 import org.rinasim.util.Time;
+import org.rinasim.widget.FriendPanel;
 
 /**
  * 服务器监听线程

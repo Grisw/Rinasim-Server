@@ -19,9 +19,9 @@ import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-import org.rinasim.object.FriendPanel;
 import org.rinasim.object.Message;
 import org.rinasim.object.User;
+import org.rinasim.widget.FriendPanel;
 
 /**
  * 联系人数据连接

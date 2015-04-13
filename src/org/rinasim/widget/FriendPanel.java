@@ -1,4 +1,4 @@
-package org.rinasim.object;
+package org.rinasim.widget;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -10,9 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.Timer;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.UIManager;
+import javax.swing.border.EtchedBorder;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -34,7 +32,7 @@ import javax.swing.JMenuItem;
 /**
  * 联系人面板
  * @author 刘旭涛
- * @date 2015年3月15日 下午9:11:17
+ * @date 2015年3月27日 下午12:41:39
  * @since v1.0
  */
 public class FriendPanel extends JPanel{
@@ -62,11 +60,8 @@ public class FriendPanel extends JPanel{
 	public FriendPanel(ImageIcon portrait, String name, int id, boolean isOnline, boolean hasMsg) {
 		
 		//初始化
-		setBorder(new LineBorder(UIManager.getColor("Button.background"), 1, true));
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		setAlignmentX(LEFT_ALIGNMENT);
-		
-		setIsOnline(isOnline);
 		
 		this.portrait=portrait;
 		this.name=name;
@@ -101,7 +96,7 @@ public class FriendPanel extends JPanel{
 		
 		//名称显示
 		nameLabel = new JLabel(name);
-		nameLabel.setFont(new Font("黑体", Font.PLAIN, 18));
+		nameLabel.setFont(new Font("微软雅黑", Font.PLAIN, 18));
 		nameLabel.setOpaque(false);
 		nameAndId.add(nameLabel);
 		
@@ -115,6 +110,9 @@ public class FriendPanel extends JPanel{
 		Component horizontalGlue = Box.createHorizontalGlue();
 		add(horizontalGlue);
 
+		//绘制背景
+		setBackground(Color.WHITE);
+		setIsOnline(isOnline);
 	}
 
 	/**
@@ -122,11 +120,10 @@ public class FriendPanel extends JPanel{
 	 * @param isOnline true在线
 	 */
 	public void setIsOnline(boolean isOnline){
-		if(isOnline){
-			setBackground(Color.WHITE);
-		}else{
-			setBackground(UIManager.getColor("Button.background"));
-		}
+		if(isOnline)
+			nameLabel.setForeground(new Color(46, 184, 230));
+		else
+			nameLabel.setForeground(Color.BLACK);
 	}
 	
 	/**
@@ -230,8 +227,18 @@ public class FriendPanel extends JPanel{
 		addMouseListener(new MouseAdapter() {
 
 			@Override
+			public void mouseEntered(MouseEvent e) {
+				setBackground(new Color(240, 240, 240));
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				setBackground(Color.WHITE);
+			}
+
+			@Override
 			public void mousePressed(MouseEvent e) {
-				setBorder(new BevelBorder(BevelBorder.LOWERED));
+				setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(240, 240, 240), new Color(240, 240, 240)));
 				if (e.isPopupTrigger()) {
 					showMenu(e);
 				}
@@ -239,7 +246,7 @@ public class FriendPanel extends JPanel{
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				setBorder(new LineBorder(UIManager.getColor("Button.background"), 1, true));
+				setBorder(null);
 				if (e.isPopupTrigger()) {
 					showMenu(e);
 				}
